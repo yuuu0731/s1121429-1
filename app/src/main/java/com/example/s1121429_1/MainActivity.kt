@@ -13,7 +13,10 @@ import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -30,6 +33,8 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.IntOffset
+import androidx.compose.ui.unit.dp
 import com.example.s1121429_1.ui.theme.S11214291Theme
 
 class MainActivity : ComponentActivity() {
@@ -84,6 +89,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                 }
             }
     )
+
+
     Column(horizontalAlignment = Alignment.CenterHorizontally ) {
         Text(
             "2024期末上機考(資管二A戴岑伃)",
@@ -106,5 +113,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         ) {
             Text("結束App")
         }
+        Image(
+            painter = painterResource(id = R.drawable.maria2),
+            contentDescription = "瑪麗亞",
+            modifier = Modifier
+                .width(200.dp)
+                .height(220.dp)
+                .offset { IntOffset(-360, 440) }
+        )
     }
 }
