@@ -1,5 +1,6 @@
 package com.example.s1121429_1
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -20,6 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             S11214291Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
                     Greeting(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
@@ -32,16 +34,5 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    S11214291Theme {
-        Greeting("Android")
-    }
 }
